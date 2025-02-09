@@ -1,26 +1,36 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"], // Add JSX/TSX if using React
   theme: {
-
-    screens: {
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+    container: {
+      center: true,
+      padding: "15px",
     },
-    
-    extend: {},
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1200px",
+    },
+    fontFamily: {
+      primary: ["var(--bebas-neue)", ...defaultTheme.fontFamily.sans],
+      secondary: ["var(--inter)", ...defaultTheme.fontFamily.sans],
+    },
+    extend: {
+      colors: {
+        primary: "#10151f",
+        secondary: "#475467",
+        accent: {
+          DEFAULT: "#7edad2",
+          hover: "#79d3cc",
+        },
+      },
+      boxShadow: {
+        custom: "0px 14px 54px rgba(0,0,0,0.1)",
+      },
+    },
   },
   plugins: [],
-}
+};

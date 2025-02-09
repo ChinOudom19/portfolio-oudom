@@ -8,6 +8,10 @@ const Menu = [
       path: "/about",
     },
     {
+      label: "Skill",
+      path: "/skill"
+    },
+    {
       label: "Projects",
       path: "/projects",
     },
