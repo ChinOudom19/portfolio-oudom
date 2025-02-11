@@ -8,7 +8,7 @@ import Socials from '../data/Socials';
 const Nav = ({ linkStyles, spy }) => {
   const [bgColor, setBgColor] = useState("bg-white");
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
-  const location = useLocation();
+  const location = useLocation(false);
   const menuRef = useRef(null); // Ref to the mobile menu
 
   // Scroll Navbar
@@ -45,7 +45,7 @@ const Nav = ({ linkStyles, spy }) => {
     <section className={`w-full fixed top-0 py-3 xl:py-4 z-50 transition-all duration-300 ${bgColor}`}>
       <div className='flex container mx-auto justify-between items-center'>
         <Link to="/" className='font-primary text-2xl tracking-[4px]'>
-          <span>Chin Oudom</span>
+          <span>Skin Care</span>
         </Link>
         <div className='hidden sm:flex gap-6'>
           {Menu.map((item, index) => (
@@ -55,8 +55,8 @@ const Nav = ({ linkStyles, spy }) => {
                 to={item.path.substring(1)}
                 smooth={true}
                 spy={spy}
-                activeClass="text-blue-500 font-bold"
-                className={`${linkStyles} transition-colors duration-300`}
+                activeClass="text-accetn font-bold"
+                className={linkStyles}
               >
                 {item.label}
               </ScrollLink>
@@ -94,9 +94,8 @@ const Nav = ({ linkStyles, spy }) => {
                 to={item.path.substring(1)}
                 smooth={true}
                 spy={spy}
-                activeClass="text-blue-500 font-bold"
-                className={`${linkStyles} transition-colors duration-300`}
-                onClick={toggleMenu} // Close the menu when clicked
+                activeClass="text-accent font-bold"
+                className={linkStyles}
               >
                 {item.label}
               </ScrollLink>
